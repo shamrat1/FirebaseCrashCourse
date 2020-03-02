@@ -22,11 +22,17 @@ class ViewController: UIViewController {
 //            "age":24
 //        ])
         dbRef.child("-M1Ojlvj4F_cUTS3Dvpu").observe(.value, with: { (snap) in
-            print(snap.value!)
+            print(snap.childSnapshot(forPath: "name").value!)
         })
         dbRef.observe(.value) { (snapshot) in
-            print(snapshot.value!)
+            debugPrint(snapshot)
+            for value in snapshot.value! as? [String:Any] ?? [:] {
+                //
+            }
         }
+//        dbRef.observeSingleEvent(of: .value) { (snap) in
+//            print(snap.value!)
+//        }
     }
 
 
