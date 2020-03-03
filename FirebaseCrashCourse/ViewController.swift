@@ -9,13 +9,28 @@
 import UIKit
 import Firebase
 
-class ViewController: UIViewController {
 
+class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    let imagePickerController = UIImagePickerController()
+    var userPickedImage: UIImage?
+    let dbRef = Database.database().reference()
+
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var nameField: UITextField!
+    @IBOutlet weak var ageField: UITextField!
+    @IBOutlet weak var addressField: UITextField!
+    @IBOutlet weak var phoneNumberField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        let dbRef = Database.database().reference()
+        
+        imagePickerController.delegate = self
+        imagePickerController.sourceType = .photoLibrary
+        
+        
 //        dbRef.childByAutoId().setValue([
 //            "name":"Yasin Shamrat",
 //            "email":"yshamrat@gmail.com",
@@ -34,7 +49,52 @@ class ViewController: UIViewController {
 //            print(snap.value!)
 //        }
     }
-
-
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            imageView.image = selectedImage
+            self.userPickedImage = selectedImage
+        }
+        dismiss(animated: true, completion: nil)
+    }
+    @IBAction func onClickNavButton(_ sender: Any) {
+        present(imagePickerController, animated: true, completion: nil)
+    }
+    
+    @IBAction func onClickSaveButton(_ sender: Any) {
+       
+        if let name = nameField.text, let age = ageField.text, let address = addressField.text, let phone = phoneNumberField.text , let image = userPickedImage {
+             print("name: \(name)\nAge: \(age)\nAddress: \(address)\nPhone: \(phone)\nImage: \(image.description)")
+            let id = UUID().uuidString
+            let storageRef = Storage.storage().reference().child("\(id).jpg")
+            
+            if let compressedImage = image.jpegData(compressionQuality: 0.7) {
+                storageRef.putData(compressedImage, metadata: nil) { (meta, error) in
+                    if error != nil {
+                        print(error!)
+                    }else{
+                        storageRef.downloadURL { (url, error) in
+                            if let imageUrl = url?.absoluteString {
+                                print(imageUrl)
+                                self.dbRef.child(id).setValue([
+                                    "name": name,
+                                    "age": age,
+                                    "address": address,
+                                    "phone": phone,
+                                    "image": imageUrl,
+                                    "status" : 0
+                                ])
+                            }
+                        }
+                    }
+                }
+            }
+            
+        }else {
+            let alert = UIAlertController(title: "Warning", message: "Please fillup all fields and pick an image", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .destructive, handler: nil))
+            present(alert, animated: true, completion: nil)
+        }
+    }
+    
 }
 
