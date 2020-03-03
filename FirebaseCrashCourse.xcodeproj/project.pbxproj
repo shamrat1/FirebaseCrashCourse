@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,8 @@
 		04772474240CC718002DDB12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04772473240CC718002DDB12 /* Assets.xcassets */; };
 		04772477240CC718002DDB12 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04772475240CC718002DDB12 /* LaunchScreen.storyboard */; };
 		0477247F240CCACD002DDB12 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0477247E240CCACD002DDB12 /* GoogleService-Info.plist */; };
+		04836DC4240E54520050F34B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04836DC3240E54520050F34B /* HomeViewController.swift */; };
+		04836DC6240E55980050F34B /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04836DC5240E55980050F34B /* HomeTableViewCell.swift */; };
 		0F9BC3DF43B504B37E7F6070 /* Pods_FirebaseCrashCourse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B78136BA4843E6C1226C512 /* Pods_FirebaseCrashCourse.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +29,8 @@
 		04772476240CC718002DDB12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04772478240CC718002DDB12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0477247E240CCACD002DDB12 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		04836DC3240E54520050F34B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		04836DC5240E55980050F34B /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		1B78136BA4843E6C1226C512 /* Pods_FirebaseCrashCourse.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirebaseCrashCourse.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F7B694F51BE6A66569BA481 /* Pods-FirebaseCrashCourse.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseCrashCourse.debug.xcconfig"; path = "Target Support Files/Pods-FirebaseCrashCourse/Pods-FirebaseCrashCourse.debug.xcconfig"; sourceTree = "<group>"; };
 		E6DD4D6D867DB3581D6C1200 /* Pods-FirebaseCrashCourse.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseCrashCourse.release.xcconfig"; path = "Target Support Files/Pods-FirebaseCrashCourse/Pods-FirebaseCrashCourse.release.xcconfig"; sourceTree = "<group>"; };
@@ -81,6 +85,8 @@
 				04772475240CC718002DDB12 /* LaunchScreen.storyboard */,
 				0477247E240CCACD002DDB12 /* GoogleService-Info.plist */,
 				04772478240CC718002DDB12 /* Info.plist */,
+				04836DC3240E54520050F34B /* HomeViewController.swift */,
+				04836DC5240E55980050F34B /* HomeTableViewCell.swift */,
 			);
 			path = FirebaseCrashCourse;
 			sourceTree = "<group>";
@@ -91,7 +97,6 @@
 				8F7B694F51BE6A66569BA481 /* Pods-FirebaseCrashCourse.debug.xcconfig */,
 				E6DD4D6D867DB3581D6C1200 /* Pods-FirebaseCrashCourse.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -212,8 +217,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0477246F240CC702002DDB12 /* ViewController.swift in Sources */,
+				04836DC6240E55980050F34B /* HomeTableViewCell.swift in Sources */,
 				0477246B240CC702002DDB12 /* AppDelegate.swift in Sources */,
 				0477246D240CC702002DDB12 /* SceneDelegate.swift in Sources */,
+				04836DC4240E54520050F34B /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
