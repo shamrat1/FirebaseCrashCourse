@@ -76,6 +76,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                             if let imageUrl = url?.absoluteString {
                                 print(imageUrl)
                                 self.dbRef.child(id).setValue([
+                                    "id":id,
                                     "name": name,
                                     "age": age,
                                     "address": address,

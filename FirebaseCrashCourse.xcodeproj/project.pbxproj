@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0451A84D240F7235000E9BCD /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0451A84C240F7235000E9BCD /* Person.swift */; };
 		0477246B240CC702002DDB12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0477246A240CC702002DDB12 /* AppDelegate.swift */; };
 		0477246D240CC702002DDB12 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0477246C240CC702002DDB12 /* SceneDelegate.swift */; };
 		0477246F240CC702002DDB12 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0477246E240CC702002DDB12 /* ViewController.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0451A84C240F7235000E9BCD /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		04772467240CC702002DDB12 /* FirebaseCrashCourse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirebaseCrashCourse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0477246A240CC702002DDB12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0477246C240CC702002DDB12 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 				04772478240CC718002DDB12 /* Info.plist */,
 				04836DC3240E54520050F34B /* HomeViewController.swift */,
 				04836DC5240E55980050F34B /* HomeTableViewCell.swift */,
+				0451A84C240F7235000E9BCD /* Person.swift */,
 			);
 			path = FirebaseCrashCourse;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0451A84D240F7235000E9BCD /* Person.swift in Sources */,
 				0477246F240CC702002DDB12 /* ViewController.swift in Sources */,
 				04836DC6240E55980050F34B /* HomeTableViewCell.swift in Sources */,
 				0477246B240CC702002DDB12 /* AppDelegate.swift in Sources */,
