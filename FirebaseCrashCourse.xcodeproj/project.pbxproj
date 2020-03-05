@@ -17,6 +17,7 @@
 		0477247F240CCACD002DDB12 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0477247E240CCACD002DDB12 /* GoogleService-Info.plist */; };
 		04836DC4240E54520050F34B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04836DC3240E54520050F34B /* HomeViewController.swift */; };
 		04836DC6240E55980050F34B /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04836DC5240E55980050F34B /* HomeTableViewCell.swift */; };
+		04C078302410C82000E7FCD4 /* CompareFaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C0782F2410C82000E7FCD4 /* CompareFaceViewController.swift */; };
 		0F9BC3DF43B504B37E7F6070 /* Pods_FirebaseCrashCourse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B78136BA4843E6C1226C512 /* Pods_FirebaseCrashCourse.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,7 @@
 		0477247E240CCACD002DDB12 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		04836DC3240E54520050F34B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		04836DC5240E55980050F34B /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		04C0782F2410C82000E7FCD4 /* CompareFaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompareFaceViewController.swift; sourceTree = "<group>"; };
 		1B78136BA4843E6C1226C512 /* Pods_FirebaseCrashCourse.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirebaseCrashCourse.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F7B694F51BE6A66569BA481 /* Pods-FirebaseCrashCourse.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseCrashCourse.debug.xcconfig"; path = "Target Support Files/Pods-FirebaseCrashCourse/Pods-FirebaseCrashCourse.debug.xcconfig"; sourceTree = "<group>"; };
 		E6DD4D6D867DB3581D6C1200 /* Pods-FirebaseCrashCourse.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseCrashCourse.release.xcconfig"; path = "Target Support Files/Pods-FirebaseCrashCourse/Pods-FirebaseCrashCourse.release.xcconfig"; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				04836DC3240E54520050F34B /* HomeViewController.swift */,
 				04836DC5240E55980050F34B /* HomeTableViewCell.swift */,
 				0451A84C240F7235000E9BCD /* Person.swift */,
+				04C0782F2410C82000E7FCD4 /* CompareFaceViewController.swift */,
 			);
 			path = FirebaseCrashCourse;
 			sourceTree = "<group>";
@@ -219,6 +222,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04C078302410C82000E7FCD4 /* CompareFaceViewController.swift in Sources */,
 				0451A84D240F7235000E9BCD /* Person.swift in Sources */,
 				0477246F240CC702002DDB12 /* ViewController.swift in Sources */,
 				04836DC6240E55980050F34B /* HomeTableViewCell.swift in Sources */,

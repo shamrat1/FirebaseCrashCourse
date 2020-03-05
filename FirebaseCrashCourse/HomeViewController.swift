@@ -49,6 +49,9 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "homeCell") as! HomeTableViewCell
         let imageURL = data[indexPath.row].image
+        cell.cellView.layer.borderWidth = 1
+        cell.cellView.layer.borderColor = UIColor.green.cgColor
+        cell.cellView.layer.cornerRadius = 10
         cell.personImageView.kf.setImage(with: URL(string: imageURL!))
         cell.nameLabel.text = data[indexPath.row].name
         cell.addressLabel.text = data[indexPath.row].address
