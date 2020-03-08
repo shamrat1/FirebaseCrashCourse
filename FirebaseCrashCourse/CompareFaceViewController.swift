@@ -12,23 +12,26 @@ class CompareFaceViewController: UIViewController, UIImagePickerControllerDelega
     
     let imagePicker = UIImagePickerController()
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var compareButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         imagePicker.delegate = self
         imagePicker.sourceType = .photoLibrary
         // Do any additional setup after loading the view.
+        compareButton.isHidden = true
     }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
         imageView.image = image
         dismiss(animated: true, completion: nil)
+        compareButton.isHidden = false
     }
-    override func viewWillAppear(_ animated: Bool) {
-        loadImagePicker()
+    @IBAction func onClickCompare(_ sender: Any) {
+        print(originalData)
     }
     
-    func loadImagePicker(){
+    @IBAction func onClickAddImage(_ sender: Any) {
         present(imagePicker, animated: true, completion: nil)
     }
     

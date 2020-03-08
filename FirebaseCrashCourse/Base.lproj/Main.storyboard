@@ -139,20 +139,39 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Z9S-aE-2x9">
-                                <rect key="frame" x="0.0" y="44" width="375" height="574"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="287"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9O9-tN-fqv">
+                                <rect key="frame" x="112.5" y="559" width="150" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="TzA-US-562"/>
+                                </constraints>
+                                <state key="normal" title="Compare"/>
+                                <connections>
+                                    <action selector="onClickCompare:" destination="48U-7U-dRU" eventType="touchUpInside" id="b6C-xa-ye5"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="Z9S-aE-2x9" firstAttribute="leading" secondItem="UDd-Co-09i" secondAttribute="leading" id="1BC-Wg-8Rq"/>
-                            <constraint firstItem="UDd-Co-09i" firstAttribute="bottom" secondItem="Z9S-aE-2x9" secondAttribute="bottom" id="Nit-st-Loe"/>
-                            <constraint firstItem="UDd-Co-09i" firstAttribute="trailing" secondItem="Z9S-aE-2x9" secondAttribute="trailing" id="fBv-eb-JpV"/>
-                            <constraint firstItem="Z9S-aE-2x9" firstAttribute="top" secondItem="UDd-Co-09i" secondAttribute="top" id="fVA-5s-yN7"/>
+                            <constraint firstItem="9O9-tN-fqv" firstAttribute="centerX" secondItem="e0i-Xf-QqD" secondAttribute="centerX" id="LuB-VG-KaY"/>
+                            <constraint firstItem="Z9S-aE-2x9" firstAttribute="top" secondItem="UDd-Co-09i" secondAttribute="top" id="TDd-Pb-9YB"/>
+                            <constraint firstItem="Z9S-aE-2x9" firstAttribute="leading" secondItem="UDd-Co-09i" secondAttribute="leading" id="UKs-nQ-bYl"/>
+                            <constraint firstItem="UDd-Co-09i" firstAttribute="bottom" secondItem="9O9-tN-fqv" secondAttribute="bottom" constant="29" id="W7J-Cv-Npg"/>
+                            <constraint firstItem="Z9S-aE-2x9" firstAttribute="height" secondItem="UDd-Co-09i" secondAttribute="height" multiplier="0.5" id="mjE-uJ-waA"/>
+                            <constraint firstItem="Z9S-aE-2x9" firstAttribute="trailing" secondItem="UDd-Co-09i" secondAttribute="trailing" id="zXf-6k-KxN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="UDd-Co-09i"/>
                     </view>
-                    <navigationItem key="navigationItem" id="gRt-cx-th7"/>
+                    <navigationItem key="navigationItem" id="gRt-cx-th7">
+                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="N5C-Wn-HhG">
+                            <connections>
+                                <action selector="onClickAddImage:" destination="48U-7U-dRU" id="fAi-NU-QWF"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="compareButton" destination="9O9-tN-fqv" id="eHd-VR-TT6"/>
                         <outlet property="imageView" destination="Z9S-aE-2x9" id="gLp-Z1-HZN"/>
                     </connections>
                 </viewController>
@@ -160,7 +179,7 @@
             </objects>
             <point key="canvasLocation" x="1313" y="166"/>
         </scene>
-        <!--Home View Controller-->
+        <!--Missing Person-->
         <scene sceneID="6NT-M7-Rt5">
             <objects>
                 <viewController id="aOD-at-Yd0" customClass="HomeViewController" customModule="FirebaseCrashCourse" customModuleProvider="target" sceneMemberID="viewController">
@@ -253,6 +272,9 @@
                                     <segment title="Found"/>
                                 </segments>
                                 <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <connections>
+                                    <action selector="onClickFilter:" destination="aOD-at-Yd0" eventType="valueChanged" id="PH0-NR-QLy"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -268,7 +290,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tBf-LZ-m32"/>
                     </view>
-                    <navigationItem key="navigationItem" id="bFm-sq-ZT0"/>
+                    <navigationItem key="navigationItem" title="Missing Person" id="bFm-sq-ZT0"/>
                     <connections>
                         <outlet property="tableView" destination="m0X-nC-Bfb" id="P3Q-fa-Sai"/>
                     </connections>
