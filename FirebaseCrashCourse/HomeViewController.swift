@@ -89,12 +89,16 @@ extension HomeViewController :UITableViewDataSource, UITableViewDelegate{
             let cell = tableView.dequeueReusableCell(withIdentifier: "homeCell") as! HomeTableViewCell
             let imageURL = data[indexPath.row].image
             cell.cellView.layer.borderWidth = 1
-            cell.cellView.layer.borderColor = data[indexPath.row].status! ? UIColor.green.cgColor : UIColor.red.cgColor
-            cell.cellView.layer.cornerRadius = 10
+            cell.cellView.layer.borderColor = data[indexPath.row].status! ? UIColor(named: "customGreen")?.cgColor : UIColor.red.cgColor
+            cell.cellView.layer.cornerRadius = 5
+            cell.statusView.roundCorners(corners: [.topRight,.bottomLeft], radius: 5)
+            cell.statusView.backgroundColor = data[indexPath.row].status! ? UIColor(named: "customGreen") : UIColor.red
+            cell.statusLabel.text = data[indexPath.row].status! ? "Found" : "Missing"
             cell.personImageView.kf.setImage(with: URL(string: imageURL!))
             cell.nameLabel.text = data[indexPath.row].name
             cell.addressLabel.text = data[indexPath.row].address
-            cell.ageLabel.text = data[indexPath.row].age
+            cell.mobileLabel.text = data[indexPath.row].phone
+            
             return cell
         }
 }

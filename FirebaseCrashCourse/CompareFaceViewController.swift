@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import SFaceCompare
 
 class CompareFaceViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     let imagePicker = UIImagePickerController()
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var compareButton: UIButton!
+    var selectedImage = UIImage()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,11 +26,13 @@ class CompareFaceViewController: UIViewController, UIImagePickerControllerDelega
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
         imageView.image = image
+        selectedImage = image
         dismiss(animated: true, completion: nil)
         compareButton.isHidden = false
     }
     @IBAction func onClickCompare(_ sender: Any) {
-        print(originalData)
+//        let compare = SFaceCompare(on: selectedImage, and: <#T##UIImage#>)
+//        print(originalData)
     }
     
     @IBAction func onClickAddImage(_ sender: Any) {
