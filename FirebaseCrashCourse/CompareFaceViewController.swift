@@ -8,6 +8,7 @@
 
 import UIKit
 import SFaceCompare
+import Kingfisher
 
 class CompareFaceViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -15,6 +16,7 @@ class CompareFaceViewController: UIViewController, UIImagePickerControllerDelega
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var compareButton: UIButton!
     var selectedImage = UIImage()
+    let activityIndicator = UIActivityIndicatorView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +24,9 @@ class CompareFaceViewController: UIViewController, UIImagePickerControllerDelega
         imagePicker.sourceType = .photoLibrary
         // Do any additional setup after loading the view.
         compareButton.isHidden = true
+        activityIndicator.center = self.view.center
+        activityIndicator.hidesWhenStopped = true
+        view.addSubview(activityIndicator)
     }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
@@ -31,8 +36,38 @@ class CompareFaceViewController: UIViewController, UIImagePickerControllerDelega
         compareButton.isHidden = false
     }
     @IBAction func onClickCompare(_ sender: Any) {
-//        let compare = SFaceCompare(on: selectedImage, and: <#T##UIImage#>)
+        activityIndicator.startAnimating()
+        for data in originalData{
+
+            DispatchQueue.global(qos: .default).async {
+                let imageURL = URL(string: data.image!)!
+                KingfisherManager.shared.retrieveImage(with: imageURL, options: nil, progressBlock: nil, completionHandler: { result in
+                    switch result{
+                    case .success(let value):
+                        print("image: \(value.image) cache: \(value.cacheType)")
+                        let compare = SFaceCompare(on: self.selectedImage, and: value.image)
+                        compare.compareFaces(succes: { results in
+                            
+                            print("mached")
+                        }, failure: {  error in
+                            print("not found")
+                        })
+                    case .failure(let error):
+                        print(error)
+                    }
+                    
+                })
+                DispatchQueue.main.async {
+                    self.activityIndicator.stopAnimating()
+                }
+            }
+            
+            
+
+        }
+        
 //        print(originalData)
+        
     }
     
     @IBAction func onClickAddImage(_ sender: Any) {
