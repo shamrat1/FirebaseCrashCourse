@@ -12,6 +12,7 @@ import Firebase
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    //MARK:- Vars & Outlets
     let imagePickerController = UIImagePickerController()
     var userPickedImage: UIImage?
     let dbRef = Database.database().reference()
@@ -22,6 +23,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var addressField: UITextField!
     @IBOutlet weak var phoneNumberField: UITextField!
     
+    // MARK:- View lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -30,25 +32,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         imagePickerController.delegate = self
         imagePickerController.sourceType = .photoLibrary
         
-        
-//        dbRef.childByAutoId().setValue([
-//            "name":"Yasin Shamrat",
-//            "email":"yshamrat@gmail.com",
-//            "age":24
-//        ])
-//        dbRef.child("-M1Ojlvj4F_cUTS3Dvpu").observe(.value, with: { (snap) in
-//            print(snap.childSnapshot(forPath: "name").value!)
-//        })
-//        dbRef.observe(.value) { (snapshot) in
-//            debugPrint(snapshot)
-//            for value in snapshot.value! as? [String:Any] ?? [:] {
-//                //
-//            }
-//        }
-//        dbRef.observeSingleEvent(of: .value) { (snap) in
-//            print(snap.value!)
-//        }
     }
+    
+    // MARK:- Image Picker Delegates
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             imageView.image = selectedImage
@@ -56,6 +42,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
         dismiss(animated: true, completion: nil)
     }
+    
+    // MARK:- IBAction Methods
     @IBAction func onClickNavButton(_ sender: Any) {
         present(imagePickerController, animated: true, completion: nil)
     }
