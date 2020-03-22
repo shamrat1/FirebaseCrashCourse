@@ -36,15 +36,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 //            "email":"yshamrat@gmail.com",
 //            "age":24
 //        ])
-        dbRef.child("-M1Ojlvj4F_cUTS3Dvpu").observe(.value, with: { (snap) in
-            print(snap.childSnapshot(forPath: "name").value!)
-        })
-        dbRef.observe(.value) { (snapshot) in
-            debugPrint(snapshot)
-            for value in snapshot.value! as? [String:Any] ?? [:] {
-                //
-            }
-        }
+//        dbRef.child("-M1Ojlvj4F_cUTS3Dvpu").observe(.value, with: { (snap) in
+//            print(snap.childSnapshot(forPath: "name").value!)
+//        })
+//        dbRef.observe(.value) { (snapshot) in
+//            debugPrint(snapshot)
+//            for value in snapshot.value! as? [String:Any] ?? [:] {
+//                //
+//            }
+//        }
 //        dbRef.observeSingleEvent(of: .value) { (snap) in
 //            print(snap.value!)
 //        }
@@ -84,16 +84,34 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                                     "image": imageUrl,
                                     "status" : 0
                                 ])
+                                
                             }
                         }
                     }
                 }
+                self.clearFields()
             }
             
+            print("here")
         }else {
             let alert = UIAlertController(title: "Warning", message: "Please fillup all fields and pick an image", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .destructive, handler: nil))
             present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    func clearFields(){
+        self.nameField.text = nil
+        self.ageField.text = nil
+        self.addressField.text = nil
+        self.imageView.image = nil
+        self.phoneNumberField.text = nil
+        
+        let alert = UIAlertController(title: "Success", message: "Data saved successfully.", preferredStyle: .alert)
+        present(alert, animated: true, completion: nil)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            alert.dismiss(animated: true, completion: nil)
         }
     }
     

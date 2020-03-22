@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0451A84D240F7235000E9BCD /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0451A84C240F7235000E9BCD /* Person.swift */; };
+		046B5ECF24272C2E0099857E /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B5ECE24272C2E0099857E /* ResultsViewController.swift */; };
+		046B5ED1242733130099857E /* ResultsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B5ED0242733130099857E /* ResultsTableViewCell.swift */; };
 		0477246B240CC702002DDB12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0477246A240CC702002DDB12 /* AppDelegate.swift */; };
 		0477246D240CC702002DDB12 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0477246C240CC702002DDB12 /* SceneDelegate.swift */; };
 		0477246F240CC702002DDB12 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0477246E240CC702002DDB12 /* ViewController.swift */; };
@@ -25,6 +27,8 @@
 
 /* Begin PBXFileReference section */
 		0451A84C240F7235000E9BCD /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		046B5ECE24272C2E0099857E /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
+		046B5ED0242733130099857E /* ResultsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsTableViewCell.swift; sourceTree = "<group>"; };
 		04772467240CC702002DDB12 /* FirebaseCrashCourse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirebaseCrashCourse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0477246A240CC702002DDB12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0477246C240CC702002DDB12 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -99,6 +103,8 @@
 				0451A84C240F7235000E9BCD /* Person.swift */,
 				04C0782F2410C82000E7FCD4 /* CompareFaceViewController.swift */,
 				04D4F7B7241607B90070DEEF /* UIVIewExtension.swift */,
+				046B5ECE24272C2E0099857E /* ResultsViewController.swift */,
+				046B5ED0242733130099857E /* ResultsTableViewCell.swift */,
 			);
 			path = FirebaseCrashCourse;
 			sourceTree = "<group>";
@@ -231,6 +237,8 @@
 				04C078302410C82000E7FCD4 /* CompareFaceViewController.swift in Sources */,
 				04D4F7BF241625060070DEEF /* Faces.mlmodel in Sources */,
 				0451A84D240F7235000E9BCD /* Person.swift in Sources */,
+				046B5ECF24272C2E0099857E /* ResultsViewController.swift in Sources */,
+				046B5ED1242733130099857E /* ResultsTableViewCell.swift in Sources */,
 				0477246F240CC702002DDB12 /* ViewController.swift in Sources */,
 				04836DC6240E55980050F34B /* HomeTableViewCell.swift in Sources */,
 				0477246B240CC702002DDB12 /* AppDelegate.swift in Sources */,
