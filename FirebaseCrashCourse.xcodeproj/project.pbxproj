@@ -23,6 +23,10 @@
 		04D4F7BC241612340070DEEF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04D4F7BB241612340070DEEF /* Assets.xcassets */; };
 		04D4F7BF241625060070DEEF /* Faces.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 04D4F7BE241625060070DEEF /* Faces.mlmodel */; };
 		0F9BC3DF43B504B37E7F6070 /* Pods_FirebaseCrashCourse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B78136BA4843E6C1226C512 /* Pods_FirebaseCrashCourse.framework */; };
+		21E24DAD24346EC300AEEC80 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21E24DA924346EC300AEEC80 /* Onboarding.storyboard */; };
+		21E24DAE24346EC300AEEC80 /* OnboardingContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E24DAA24346EC300AEEC80 /* OnboardingContentViewController.swift */; };
+		21E24DAF24346EC300AEEC80 /* OnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E24DAB24346EC300AEEC80 /* OnboardingPageViewController.swift */; };
+		21E24DB024346EC300AEEC80 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E24DAC24346EC300AEEC80 /* OnboardingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +48,10 @@
 		04D4F7BB241612340070DEEF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04D4F7BE241625060070DEEF /* Faces.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Faces.mlmodel; sourceTree = "<group>"; };
 		1B78136BA4843E6C1226C512 /* Pods_FirebaseCrashCourse.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirebaseCrashCourse.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		21E24DA924346EC300AEEC80 /* Onboarding.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
+		21E24DAA24346EC300AEEC80 /* OnboardingContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingContentViewController.swift; sourceTree = "<group>"; };
+		21E24DAB24346EC300AEEC80 /* OnboardingPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingPageViewController.swift; sourceTree = "<group>"; };
+		21E24DAC24346EC300AEEC80 /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		8F7B694F51BE6A66569BA481 /* Pods-FirebaseCrashCourse.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseCrashCourse.debug.xcconfig"; path = "Target Support Files/Pods-FirebaseCrashCourse/Pods-FirebaseCrashCourse.debug.xcconfig"; sourceTree = "<group>"; };
 		E6DD4D6D867DB3581D6C1200 /* Pods-FirebaseCrashCourse.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseCrashCourse.release.xcconfig"; path = "Target Support Files/Pods-FirebaseCrashCourse/Pods-FirebaseCrashCourse.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -89,6 +97,7 @@
 		04772469240CC702002DDB12 /* FirebaseCrashCourse */ = {
 			isa = PBXGroup;
 			children = (
+				215AEE562434654800CC4E5F /* onboarding */,
 				0477246A240CC702002DDB12 /* AppDelegate.swift */,
 				0477246C240CC702002DDB12 /* SceneDelegate.swift */,
 				0477246E240CC702002DDB12 /* ViewController.swift */,
@@ -107,6 +116,17 @@
 				046B5ED0242733130099857E /* ResultsTableViewCell.swift */,
 			);
 			path = FirebaseCrashCourse;
+			sourceTree = "<group>";
+		};
+		215AEE562434654800CC4E5F /* onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				21E24DA924346EC300AEEC80 /* Onboarding.storyboard */,
+				21E24DAA24346EC300AEEC80 /* OnboardingContentViewController.swift */,
+				21E24DAB24346EC300AEEC80 /* OnboardingPageViewController.swift */,
+				21E24DAC24346EC300AEEC80 /* OnboardingViewController.swift */,
+			);
+			path = onboarding;
 			sourceTree = "<group>";
 		};
 		97306063B96453597FE4208E /* Pods */ = {
@@ -179,6 +199,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04772477240CC718002DDB12 /* LaunchScreen.storyboard in Resources */,
+				21E24DAD24346EC300AEEC80 /* Onboarding.storyboard in Resources */,
 				0477247F240CCACD002DDB12 /* GoogleService-Info.plist in Resources */,
 				04D4F7BC241612340070DEEF /* Assets.xcassets in Resources */,
 				04772472240CC702002DDB12 /* Main.storyboard in Resources */,
@@ -234,7 +255,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21E24DAF24346EC300AEEC80 /* OnboardingPageViewController.swift in Sources */,
 				04C078302410C82000E7FCD4 /* CompareFaceViewController.swift in Sources */,
+				21E24DAE24346EC300AEEC80 /* OnboardingContentViewController.swift in Sources */,
 				04D4F7BF241625060070DEEF /* Faces.mlmodel in Sources */,
 				0451A84D240F7235000E9BCD /* Person.swift in Sources */,
 				046B5ECF24272C2E0099857E /* ResultsViewController.swift in Sources */,
@@ -243,6 +266,7 @@
 				04836DC6240E55980050F34B /* HomeTableViewCell.swift in Sources */,
 				0477246B240CC702002DDB12 /* AppDelegate.swift in Sources */,
 				0477246D240CC702002DDB12 /* SceneDelegate.swift in Sources */,
+				21E24DB024346EC300AEEC80 /* OnboardingViewController.swift in Sources */,
 				04D4F7B8241607B90070DEEF /* UIVIewExtension.swift in Sources */,
 				04836DC4240E54520050F34B /* HomeViewController.swift in Sources */,
 			);
